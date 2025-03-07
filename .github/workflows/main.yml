@@ -107,13 +107,13 @@ jobs:
       id: install
 
     - name: Template Helm
-      run: helm template kube2py ./kube2py -f ./kube2py/values.yaml
+      run: helm template todoapp ./todoapp -f ./todoapp/values.yaml
 
     - name: Lint Helm
-      run: helm lint ./kube2py/
+      run: helm lint ./todoapp/
 
     - name: Package Helm
-      run: helm package ./kube2py
+      run: helm package ./todoapp
 
     - name: Upload Helm artifact
       uses: actions/upload-artifact@v4
